@@ -3,7 +3,7 @@ import {defineStore} from 'pinia'
 
 export const useTasksStore=defineStore('taskstore',{
     state:()=>({
-        tasks:JSON.parse(localStorage.getItem('data')),
+        tasks:JSON.parse(localStorage.getItem('data')) || [],
           term:'',
           filter:'',
           isModal:false,
