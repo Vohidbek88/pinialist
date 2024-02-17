@@ -1,0 +1,21 @@
+.media{
+    width: 50%;
+}
+.infi{
+    font-size: 24px;
+}
+.addform{
+width: 75%;
+}
+@media (max-width:720px){
+
+    .media{
+        width: 70% !important;
+    }
+    .infi{
+        font-size: 14px;
+    }
+    .addform{
+        width: 100%;
+    }
+}
