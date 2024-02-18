@@ -44,7 +44,7 @@ if(perm==='granted'){
   })
 }
 }
-setInterval(myNotif,10000)
+setInterval(myNotif,3000)
 
 }
 }
