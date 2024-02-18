@@ -12,3 +12,4 @@ app.use(Vue3Toastify, {
 });
 app.use(createPinia())
 app.mount('#app')
+

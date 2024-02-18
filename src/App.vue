@@ -32,6 +32,21 @@ import ModalDelete from './components/modal/ModalDelete.vue';
 import SearchItem from './components/search-item/SearchItem.vue';
 export default {
   components: { AddForm, ItemsInfo, SearchItem, FilterItems, ListItems ,ModalDelete},
+setup(){
+ async function myNotif(){
+  const perm=await Notification.requestPermission()
+  console.log(perm);
+if(perm==='granted'){
+  new Notification('Assolomu Aleykum!!!',{
+    body:"Bir qarab qo'ying ishlarga!",
+    icon:'https://cdn-icons-png.flaticon.com/256/10279/10279604.png',
+    tag:'Ishlar!',
+  })
+}
+}
+setInterval(myNotif,10000)
+
+}
 }
 </script>
 <style>
