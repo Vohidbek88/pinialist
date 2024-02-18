@@ -23,10 +23,11 @@ export const useTasksStore=defineStore('taskstore',{
     actions:{
         addTask(task){
             this.tasks.push({
-                id:Math.floor(Math.random()*100),
+                id:Math.floor(Math.random()*10000),
                 title:task,
                 isLike:false,
                 check:false,
+                dedVaqt:''
             })
             localStorage.setItem('data',JSON.stringify(this.tasks))
         },
@@ -78,6 +79,15 @@ export const useTasksStore=defineStore('taskstore',{
             this.tasks=this.tasks.map(item=>{
                 if(item.id==id){
                     return{...item,title:val}
+                }
+                return item
+            })
+            localStorage.setItem('data',JSON.stringify(this.tasks))
+        },
+        dedItem(vaqt,id){
+            this.tasks=this.tasks.map(item=>{
+                if(item.id==id){
+                    return{...item,dedVaqt:vaqt}
                 }
                 return item
             })

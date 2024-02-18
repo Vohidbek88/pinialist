@@ -18,4 +18,7 @@ width: 75%;
     .addform{
         width: 100%;
     }
+    .datefor{
+        flex-direction: column;
+    }
 }
