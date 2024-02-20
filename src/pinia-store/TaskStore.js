@@ -27,7 +27,8 @@ export const useTasksStore=defineStore('taskstore',{
                 title:task,
                 isLike:false,
                 check:false,
-                dedVaqt:''
+                dedVaqt:'',
+                isItemDisable:false,
             })
             localStorage.setItem('data',JSON.stringify(this.tasks))
         },
@@ -85,9 +86,19 @@ export const useTasksStore=defineStore('taskstore',{
             localStorage.setItem('data',JSON.stringify(this.tasks))
         },
         dedItem(vaqt,id){
+
             this.tasks=this.tasks.map(item=>{
                 if(item.id==id){
                     return{...item,dedVaqt:vaqt}
+                }
+                return item
+            })
+            localStorage.setItem('data',JSON.stringify(this.tasks))
+        },
+        itemDisable(id){
+            this.tasks=this.tasks.map(item=>{
+                if(item.id==id){
+                    return{...item,isItemDisable:true}
                 }
                 return item
             })
